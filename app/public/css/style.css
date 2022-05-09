@@ -1,0 +1,405 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+body{
+    /*background-color: rgb(242, 230, 217);*/
+    
+}
+header{
+    
+}
+.container{
+    width: 1020px;
+    margin: 0 auto;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+nav{
+    
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li{
+    text-decoration: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+.item3{
+    margin-left: 10px;
+}
+.main_content{
+    background-image: url(../img/bg/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+.menu_content{
+    background-image: url(../img/bg/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 30vh;
+}
+.contentcontainer{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentblock{
+    width: 300px;
+    color: white;
+    font-family: 'Inconsolata', monospace;
+    font-size: 40px;
+    padding: 8px;
+    text-align: center;
+    font-weight: 300;
+}
+.content1{
+    
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.block{
+    width: 450px;
+}
+.img1{
+    height: 500px;
+    width: 450px;
+    background-image: url(../img/img/food1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 30px 30px 30px 0px;
+}
+.img2{
+    height: 200px;
+    width: 450px;
+    background-image: url(../img/img/food2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    margin: 30px 30px 30px 0px;
+}
+.img3{
+    height: 250px;
+    width: 450px;
+    background-image: url(../img/img/food3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 30px 30px 30px 0px;
+}
+.img4{
+    height: 500px;
+    width: 450px;
+    background-image: url(../img/img/food4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    margin: 30px 30px 30px 0px;
+}
+.block h2{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.block p{
+    margin: 30px;
+}
+.content2{
+    margin: 0 auto;
+    height: 600px;
+    background-image: url(../img/bg/bg2.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orderblock{
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding-top: 100px;
+}
+.content3{
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textblock{
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding-top: 100px;
+}
+.contentbg{
+    background-image: url(../img/bg/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 45vh;
+}
+.footerbg{
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(253, 249, 245);
+}
+.footercontent{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*dalwe idet menu.css*/
+
+#productscontaier{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product img{
+    width: 300px;
+    height: 300px;
+}
+.buttons{
+    display: flex;
+}
+
+/*dalwe idet poisk*/
+
+.product.hide{
+    display: none;
+}
+.categories ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    font-size: 20px;
+}
+.categories ul li{
+    list-style-type: none;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    font-size: 20px;
+    text-decoration:none;
+}
+.categories ul li a{
+    list-style-type: none;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    font-size: 30px;
+    text-decoration:none;
+}
+/*.block_products{
+    display:flex;
+    justify-content:space-between;
+}*/
+.block_products{
+    margin:0 auto;
+}
+#10{
+    width: 1020px;
+}
+.block_products tbody{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+.block_products tbody tr{
+    width:450px;
+}
+.block_products img{
+    width:150px;
+    height:150px;
+}
+.wrap{
+    width:450px;
+}
+.showcart a{
+    text-decoration:none;
+    color:black;
+}
+.login{
+    color:white;
+    text-decoration:none;
+}
+.login a{
+    color:white;
+    text-decoration:none;
+}
+.login h{
+    color:white;
+    text-decoration:none;
+}
+.login td{
+    color:white;
+    text-decoration:none;
+}
+.footerblock a{
+    color: black;
+    text-decoration:none;
+}
+.register h2{
+    color:white;
+}
+.register td{
+    color:white;
+}
+.adminlogin h2{
+    color:white;
+}
+.adminlogin td{
+    color:white;
+}
+.adminlogin a{
+    color:white;
+    text-decoration:none;
+}
+.main{
+    margin-top: 40px;
+}
+.buttons button{
+    background-color: #89c290;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.recipe h1{
+    font-size: 15px;
+}
+.recipe img:hover{
+    background-color: black;
+}
+#recipescontainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.recipe img{
+    width: 300px;
+    height: 300px;
+}
+.recipe.hide{
+    display: none;
+}
+.proteins{
+    background-image: url(../img/product/1.jpg);
+    height: 30vh;
+    background-size: cover;
+}
+.carbs{
+    background-image: url(../img/product/2.jpg);
+    height: 30vh;
+    background-size: cover;
+}
+.fats{
+    background-image: url(../img/product/3.jpg);
+    height: 30vh;
+    background-size: cover;
+}
+.col-md-12 p{
+    text-align: center;
+    padding: 10px;
+}
+.searchcontainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+.row{
+    margin-top: 15px;
+}
+#food{
+    width: 20vw;
+}
+#btn{
+    width: 5vw;
+    background-color:aliceblue;
+}
+#calories{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}
+#carbs{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}#proteins{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}#fats{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}
+.calories1{
+    background-image: url(../img/img/1.jpg);
+    height: 30vh;
+    background-size: cover;
+}
+.carbs1{
+    background-image: url(../img/img/carbs.jpg);
+    height: 30vh;
+    background-size: cover;
+}
+.proteins1{
+    background-image: url(../img/img/proteins.png);
+    height: 30vh;
+    background-size: cover;
+}
+.fats1{
+    background-image: url(../img/img/fats.jpg);
+    height: 30vh;
+    background-size: cover;
+}
