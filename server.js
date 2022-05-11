@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var methodOverride = require('method-override')
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 const dbConfig = require('./app/config/database.config.js');
 const mongoose = require('mongoose');
+
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
@@ -16,12 +18,19 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+const authRouter = require('./app/routes/authRouter')
+app.use("/auth", authRouter)
 const UserRoute = require('./app/routes/User')
 app.use('/user',UserRoute)
+app.use(methodOverride('_method'))
 
 
-app.listen(5000, () => {
+/*app.listen(5000, () => {
     console.log("Server is listening on port 5000");
+});*/
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
 

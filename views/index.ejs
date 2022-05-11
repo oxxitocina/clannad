@@ -78,13 +78,23 @@
         </tr>
         </table>
         </form>
-        
 
-        
-
-        <form action="/auth/users" method="get">
-            <input type="hidden" name="email" value="" />
-        </form>
+        <form action="/user" method="POST">
+            <table>
+            <tr>
+            <td>Логин</td>
+            <td><input type="textbox" name="email">
+            </tr>
+            <tr>
+            <td>Пароль</td>
+            <td><input type="password" name="firstname">
+            </tr>
+            <tr>
+            <td></td>
+            <td><input type="submit" name="submit" value="loginUser">
+            </tr>
+            </table>
+            </form>
 
     <div class="mydata"></div>
 

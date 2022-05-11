@@ -13,10 +13,11 @@ exports.create = async (req, res) => {
     });
     
     await user.save().then(data => {
-        res.send({
+        /*res.send({
             message:"User created successfully!!",
             user:data
-        });
+        });*/
+        res.render('index', {mydata: "user "+ data.firstName +" created succesfully!"})
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating user"
@@ -67,19 +68,22 @@ exports.update = async (req, res) => {
 };
 // Delete a user with the specified id in the request
 exports.destroy = async (req, res) => {
-    await UserModel.findByIdAndRemove(req.params.id).then(data => {
-        if (!data) {
-          res.status(404).send({
-            message: `User not found.`
-          });
+    //await UserModel.findByIdAndRemove(req.params.id).then(data => {
+    let useremail=req.body.email
+    await UserModel.deleteOne({email: req.body.email}).then(data => {
+    //await UserModel.findByIdAndRemove(req.query.id).then(data => {
+        //console.log(data)
+        if (data.deletedCount===0) {
+            //res.status(404).send({ message: `User not found.`});
+            res.status(404).render('results', {mydata: "User not found"})
+
         } else {
-          res.send({
-            message: "User deleted successfully!"
-          });
+            //res.send({message: "User deleted successfully!"});
+
+            res.render('results', {mydata: "user "+useremail+" deleted succesfully!"})
         }
     }).catch(err => {
-        res.status(500).send({
-          message: err.message
-        });
+        //res.status(500).send({ message: err.message });
+        res.status(500).render('results', {mydata: err.message})
     });
 };

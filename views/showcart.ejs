@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,18 +12,16 @@
 </head>
 
 <body>
-    
-    
-    
-        <section class="section1">
-        <div class="main_content">
+    <section class="section1">
+        
+        <div class="menu_content">
             <header>
-                <div class="container">
-                    <div class="name">
-                        <img class="logo" src="img/logo/logo.png" alt="logo">
-                    </div>
-                    <nav>
-                        <ul>
+            <div class="container">
+                <div class="name">
+                    <img class="logo" src="img/logo/logo.png" alt="logo">
+                </div>
+                <nav>
+                 <ul>
                             <li class="item1"><a href="/">Главная</a></li>
                             <li class="item2"><a href="/menu">Прайс лист</a></li>
                             <li class="item1"><a href="/about">Наша история</a></li>
@@ -28,46 +29,48 @@
                             <li class="item5"><a href="/login">Юзер логин</a></li>
                             <li class="item6"><a href="/registration">Регистрация</a></li>
                             <li class="item7"><a href="/admin">Админ логин</a></li>
-                            <li class="item8"><div id="bar">
+                    <li class="item8"><div id="bar">
 
 </div></li>
                     </ul>
-                    </nav>
-                </div>
-            </header>
-            <div class="container">
-                <div class="contentcontainer">
-                            <div class = "register">
-<h2>Регистрация</h2>
-
-<p>
-
-
-<form action="/auth/registration" method="POST">
-<table>
-<tr>
-<td>Логин</td>
-<td><input type="textbox" name="username">
-</tr>
-<tr>
-<td>Пароль</td>
-<td><input type="password" name="password">
-</tr>
-<tr>
-<td></td>
-<td><input type="submit" name="submit" value="Регистрация">
-</tr>
-</table>
-</form>
-
-    </div>                        
+                </nav>
+            </div>
+        </header>
+            
+        <form action="user/email?_method=DELETE" method="POST">
+            <table>
+            <tr>
+            <td>Логин</td>
+            <td><input type="textbox" name="email">
+            </tr>
+            
+            <td><input type="submit" name="submit" value="login">
+            </tr>
+            </table>
+            </form>
 
                 </div>
             </div>
+            
         </div>
+        
+        <div class="container">
+                <div class="menucontentcontainer">
+                                            <div class="categories">
+<ul>
+
+</ul>
+     </div>
+     
+                         </div>
+                         <div class = "showcart">
+                 
+        </div>
+        
+        <div class="food"></div>
+        
     </section>
-    
-        <footer>
+     <footer>
         <div class="footerbg">
             <div class="container">
                 <div class="footercontent">
@@ -85,24 +88,7 @@
             </div>
         </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
