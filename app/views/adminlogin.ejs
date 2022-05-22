@@ -17,14 +17,14 @@
             <header>
                 <div class="container">
                     <div class="name">
-                        <img class="logo" src="img/logo/logo.png" alt="logo">
+                        <img class="logo" src="../public/img/logo/logo.png" alt="logo">
                     </div>
                     <nav>
                         <ul>
                             <li class="item1"><a href="/">Главная</a></li>
                             <li class="item2"><a href="/menu">Прайс лист</a></li>
-                            <li class="item1"><a href="/about">Наша история</a></li>
-                            <li class="item4"><a href="/cart">Корзина</a></li>
+                            
+                            
                             <li class="item5"><a href="/login">Юзер логин</a></li>
                             <li class="item6"><a href="/registration">Регистрация</a></li>
                             <li class="item7"><a href="/admin">Админ логин</a></li>
@@ -34,29 +34,61 @@
                     </nav>
                 </div>
             </header>
-            <div class="container">
-                <div class="contentcontainer">
-                            <div class = "login">
-<h2>Админ логин</h2>
-<p>
-<form action="" method="POST">
-<table>
-<tr>
-<td>Username</td>
-<td><input type="textbox" name="userBox">
-</tr>
-<tr>
-<td>Password</td>
-<td><input type="password" name="passBox">
-</tr>
-<tr>
-<td></td>
-<td><input type="submit" name="submit" value="Логин">
-</tr>
-</table>
-</form>
 
-    </div>                        
+
+            <div class="container">
+
+                <form action="/user/email" method="get">
+                    <input type="text" name="email">
+                    <button type="submit">Найти пользователя</button>
+                </form>
+            
+                  <form method="POST" action="/user/email?_method=DELETE">
+                    <input type="text" name="email">
+                    <button type="submit">Удалить пользователя</button>
+                  </form>
+            
+                  
+            
+                  <form action="/user/email?_method=PATCH" class="needs-validation" novalidate method="post">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="newEmail" class="form-label">Новая почта</label><br>
+                            <input type="text" class="form-control" name="newEmail" id="newEmail" placeholder="" value="" required>
+                            
+                        </div>
+            
+                        <div class="col-sm-6">
+                            <label for="newFirstName" class="form-label">Новое имя</label><br>
+                            <input type="text" class="form-control" name="newFirstName" id="newFirstName" placeholder="" value="" required>
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="newLastName" class="form-label">Новая фамилия</label><br>
+                            <input type="text" class="form-control" name="newLastName" id="newLastName" placeholder="" value="" required>
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="newPhone" class="form-label">Новый номер</label><br>
+                            <input type="text" class="form-control" name="newPhone" id="newPhone" placeholder="" value="" required>
+                            
+                        </div>
+                    </div>
+            
+                    
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="oldEmail" class="form-label">Текущая почта</label><br>
+                            <input type="text" class="form-control" name="oldEmail" id="oldEmail" placeholder="" value="" required>
+                            
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Обновить пользователя</button>
+                </form>
+
+                <div class="contentcontainer">
+                                                    
 
                 </div>
             </div>

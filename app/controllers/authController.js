@@ -41,6 +41,20 @@ class authController {
         }
     }
 
+    async delete(req, res) {
+        try {
+            const {username} = req.body
+            const user = await User.deleteOne({username})
+            await User.deleteOne({username})
+            
+            res.render('index')
+        } catch (e) {
+            console.log(e)
+            res.status(400).json({message: 'Login error'})
+        }
+    }
+    
+
     async getUsers(req, res) {
         try {
             const users = await User.find()

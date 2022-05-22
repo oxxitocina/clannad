@@ -11,19 +11,19 @@ function myFunction(){
             console.log(result);
             var calories = result.items[0].calories;   
             $('calories').append(calories);   
-            document.getElementById('calories').innerHTML = "Calories-" + calories;
+            document.getElementById('calories').innerHTML = "Калории-" + calories;
 
             var carbs = result.items[0].carbohydrates_total_g;   
             $('carbs').append(carbs);   
-            document.getElementById('carbs').innerHTML = "Carbohydrates-" + carbs;
+            document.getElementById('carbs').innerHTML = "Углеводы-" + carbs;
 
             var proteins = result.items[0].protein_g;   
             $('proteins').append(proteins);   
-            document.getElementById('proteins').innerHTML = "Proteins-" + proteins;
+            document.getElementById('proteins').innerHTML = "Белки-" + proteins;
 
             var fats = result.items[0].fat_total_g;   
             $('fats').append(fats);   
-            document.getElementById('fats').innerHTML = "Fats-" + fats;
+            document.getElementById('fats').innerHTML = "Жиры-" + fats;
 
         },
         error: function ajaxError(jqXHR) {

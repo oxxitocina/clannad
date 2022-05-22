@@ -18,11 +18,12 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+app.use(methodOverride('_method'))
 const authRouter = require('./app/routes/authRouter')
 app.use("/auth", authRouter)
 const UserRoute = require('./app/routes/User')
 app.use('/user',UserRoute)
-app.use(methodOverride('_method'))
+
 
 
 /*app.listen(5000, () => {
@@ -61,4 +62,7 @@ app.set('view engine', 'ejs')
   });
   app.get("/admin", function(req, res) {  
     res.render('adminlogin');
+  });
+  app.get("/delete", function(req, res) {  
+    res.render('delete');
   });

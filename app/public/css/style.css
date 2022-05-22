@@ -403,3 +403,8 @@ nav ul li a{
     height: 30vh;
     background-size: cover;
 }
+.needs-validation{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}

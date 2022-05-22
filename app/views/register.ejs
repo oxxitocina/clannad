@@ -17,14 +17,14 @@
             <header>
                 <div class="container">
                     <div class="name">
-                        <img class="logo" src="img/logo/logo.png" alt="logo">
+                        <img class="logo" src="../public/img/logo/logo.png" alt="logo">
                     </div>
                     <nav>
                         <ul>
                             <li class="item1"><a href="/">Главная</a></li>
                             <li class="item2"><a href="/menu">Прайс лист</a></li>
-                            <li class="item1"><a href="/about">Наша история</a></li>
-                            <li class="item4"><a href="/cart">Корзина</a></li>
+                            
+                            
                             <li class="item5"><a href="/login">Юзер логин</a></li>
                             <li class="item6"><a href="/registration">Регистрация</a></li>
                             <li class="item7"><a href="/admin">Админ логин</a></li>
@@ -43,16 +43,24 @@
 <p>
 
 
-<form action="/auth/registration" method="POST">
+<form action="/user" method="POST">
 <table>
 <tr>
 <td>Логин</td>
-<td><input type="textbox" name="username">
+<td><input type="textbox" name="email">
 </tr>
 <tr>
-<td>Пароль</td>
-<td><input type="password" name="password">
+<td>Имя</td>
+<td><input type="textbox" name="firstName">
 </tr>
+<tr>
+    <td>Фамилия</td>
+    <td><input type="textbox" name="lastName">
+    </tr>
+    <tr>
+        <td>Номер</td>
+        <td><input type="textbox" name="phone">
+        </tr>
 <tr>
 <td></td>
 <td><input type="submit" name="submit" value="Регистрация">
