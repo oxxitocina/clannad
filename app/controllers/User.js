@@ -2,7 +2,7 @@ const UserModel = require('../model/user')
 // Create and Save a new user
 exports.create = async (req, res) => {
     if (!req.body.email && !req.body.firstName && !req.body.lastName && !req.body.phone) {
-        res.status(400).send({ message: "Content can not be empty!" });
+        res.status(401).send({ message: "Content can not be empty!" });
     }
     
     const user = new UserModel({
@@ -17,7 +17,7 @@ exports.create = async (req, res) => {
             message:"User created successfully!!",
             user:data
         });*/
-        res.render('index', {mydata: "user "+ data.firstName +" created succesfully!"})
+        res.status(200).render('index', {mydata: "User "+ data.firstName +" created succesfully!"})
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating user"
@@ -40,7 +40,7 @@ exports.findOne = async (req, res) => {
         //const user = await UserModel.findById(req.query.id); //change params to query
         //res.status(200).json(user);
         if (user===null){
-            res.status(200).render('index', {mydata: "user not found"
+            res.status(201).render('index', {mydata: "User not found"
             })
         }else{
             res.status(200).render('index', {mydata: "user :"+ user.firstName +" "
@@ -58,7 +58,7 @@ exports.update = async (req, res) => {
 
     if (!req.body.newEmail || !req.body.newFirstName || !req.body.newLastName || !req.body.newPhone) {
         //res.status(400).send({ message: "Content can not be empty!" });
-        res.status(400).render('results', {mydata: "Data to update can not be empty!"})
+        res.status(400).render('index', {mydata: "Data to update can not be empty!"})
         return
     }
 
@@ -73,11 +73,11 @@ exports.update = async (req, res) => {
     }).then(data => {
         console.log(data)
         if (!data) {
-            res.status(404).send({message: `User not found.`});
-            //res.status(404).render('results', {mydata: `User not found.`})
+            //res.status(404).send({message: `User not found.`});
+            res.status(404).render('index', {mydata: `User not found.`})
         }else{
             //res.send({ message: "User updated successfully." })
-            res.render('index', {mydata: "User updated successfully."})
+            res.status(200).render('index', {mydata: "User updated successfully."})
         }
     }).catch(err => {
         res.status(500).send({message: err.message});
@@ -92,16 +92,16 @@ exports.destroy = async (req, res) => {
     //await UserModel.findByIdAndRemove(req.query.id).then(data => {
         //console.log(data)
         if (data.deletedCount===0) {
-            res.status(404).send({ message: `User not found.`});
-            //res.status(404).render('index', {text: "User not found"})
+            //res.status(404).send({ message: `User not found.`});
+            res.status(404).render('index', {mydata: "User not found"})
 
         } else {
-            res.send({message: "User deleted successfully!"});
+            //res.send({message: "User deleted successfully!"});
 
-            //res.render('index', {text: "user "+useremail+" deleted succesfully!"})
+            res.status(200).render('index', {mydata: "User "+useremail+" deleted succesfully!"})
         }
     }).catch(err => {
-        res.status(500).send({ message: err.message });
-        //res.status(500).render('index', {test: err.message})
+        //res.status(500).send({ message: err.message });
+        res.status(500).render('index', {mydata: err.message})
     });
 };

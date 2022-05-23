@@ -5,8 +5,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
+
+
 const dbConfig = require('./app/config/database.config.js');
 const mongoose = require('mongoose');
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
@@ -25,7 +30,11 @@ const UserRoute = require('./app/routes/User')
 app.use('/user',UserRoute)
 
 
-
+app.use(
+  '/api-docs',
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerDocument)
+);
 /*app.listen(5000, () => {
     console.log("Server is listening on port 5000");
 });*/

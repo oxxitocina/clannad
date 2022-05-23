@@ -1,0 +1,194 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0", 
+      "title": "app",
+      "description": "My User Project Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"]
+    ,"paths": {
+        "/user/emailFind": {
+          "get": {
+            "summary": "Find user",
+            "parameters": [
+              {
+                "name": "email",
+                "in": "query",
+                "required": true,
+                "description": "email of user that we want to find",
+                "type": "string",
+                "schema":{
+                  "example": "test@gmail.com"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "User data",
+                "schema": {
+                  "example":{
+                  "email": "test@gmail.com",
+                  "firstame": "testFirstName",
+                  "lastName": "testLastName",
+                  "phone": "87775556666"
+                  }
+                }
+              },
+              "201":{
+                "description": "User not found"
+              },
+              "404":{
+                "description": "error.message"
+              }
+            }
+          }
+        },
+        "/user/": {
+          "post": {
+            
+            "summary": "Create user",
+            "parameters": [
+              {
+                "name": "email",
+                "in": "query",
+                "required": true,
+                "description": "Email of user that we want to create",
+                "type": "string",
+                "schema":{
+                  "example": "testCreate@gmail.com"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "User created succesfully!",
+                "schema": {
+                  "example":{
+                  "email": "testCreate@gmail.com"
+                  }
+                }
+              },
+              "401":{
+                "description": "Content can not be empty!"
+              },
+              "500":{
+                "description": "Some error occurred while creating user"
+              }
+            }
+          }
+        },
+        "/user/email": {
+          "delete": {
+            
+            "summary": "Delete user",
+            "parameters": [
+              {
+                "name": "email",
+                "in": "query",
+                "required": true,
+                "description": "Email of user that we want to delete",
+                "type": "string",
+                "schema":{
+                  "example": "test@gmail.com"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "User deleted succesfully!",
+                "schema": {
+                  "example":{
+                  "email": "testCreate@gmail.com"
+                  }
+                }
+              },
+              "404":{
+                "description": "User not found"
+              },
+              "500":{
+                "description": "err.message"
+              }
+            }
+          }
+        },
+        "/user/id": {
+          "patch": {
+            
+            "summary": "Update user",
+            "parameters": [
+              {
+                "name": "email",
+                "in": "query",
+                "required": true,
+                "description": "Email of user that we want to update",
+                "type": "string",
+                "schema":{
+                  "example": {
+                    "newEmail": "testNew@gmail.com",
+                    "newFirstName": "newFirstName",
+                    "newLastname": "newLastname",
+                    "newPhone": "645645",
+                    "oldEmail": "test@gmail.com"
+                  }
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "User updated successfully.",
+                "schema": {
+                  "example":{
+                  "email": "testCreate@gmail.com"
+                  }
+                }
+              },
+              "404":{
+                "description": "User not found"
+              },
+              "500":{
+                "description": "err.message"
+              }
+            }
+          }
+        }
+      },
+      "definitions": {
+        "user": {
+          "required": ["email"],
+          "properties": {
+            "email": {
+              "type": "string",
+              "required": "email"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              }
+            
+            
+          }
+        }
+      }
+      
+  }
+  
+  
