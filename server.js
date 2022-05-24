@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcryptjs');
 var methodOverride = require('method-override')
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))

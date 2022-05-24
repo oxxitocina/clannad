@@ -7,14 +7,13 @@ class authController {
             const {username, password} = req.body;
             const candidate = await User.findOne({username})
             if (candidate) {
-                return res.status(400).json({message: "Пользователь с таким именем уже существует"})
+                res.status(400).render('index', {mydata: "User with that name already exists!"})
             }
-            //const hashPassword = bcrypt.hashSync(password, 7);
+            const hashPassword = bcrypt.hashSync(password, 7);
             //const userRole = await Role.findOne({value: "USER"})
-            const user = new User({username, password/*: hashPassword, roles: [userRole.value]*/})
+            const user = new User({username, password: hashPassword})
             await user.save()
-            //return res.json({message: "Пользователь успешно зарегистрирован"})
-            res.render('register' , { text:'Пользователь успешно зарегистрирован'})
+            res.status(200).render('index', {mydata: "User created succesfully!"})
         } catch (e) {
             console.log(e)
             res.status(400).json({message: 'Registration error'})
@@ -29,12 +28,11 @@ class authController {
             if (!user) {
                 return res.status(400).json({message: `Пользователь ${username} не найден`})
             }
-            const validPassword = await User.findOne({password})
+            const validPassword = bcrypt.compareSync(password, user.password)
             if (!validPassword) {
-                return res.status(400).json({message: `Введен неверный пароль`})
+                res.status(400).render('index', {mydata: "Wrong pasword!"})
             }
-            //return res.json({message: "Пользователь успешно логин"})
-            res.render('index')
+            res.status(200).render('index', {mydata: "User logged in successfully!"})
         } catch (e) {
             console.log(e)
             res.status(400).json({message: 'Login error'})
