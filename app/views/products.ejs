@@ -63,7 +63,21 @@
     </section>
     <div class = 'container'>
         
+      <div>
+        <label for="data" class="form-label">Result of your query: </label>
+        <% if(Array.isArray(mydata)){%>
+            <table>
+                <tr><td>First Name</td><td>Last Name</td><td>Email</td><td>Phone</td></tr>
 
+            <%for(let a=0;a <mydata.length;a++){%>
+                <tr><td><%=mydata[a].firstName%></td><td><%=mydata[a].lastName%></td><td><%=mydata[a].email%></td><td><%=mydata[a].phone%></td></tr>
+            <%}%>
+            </table>
+        <%}else{%>
+        <label for="data" class="form-label"> <%=mydata%>
+        </label>
+        <%}%>
+    </div>
 
 
 	<div class="block_products">

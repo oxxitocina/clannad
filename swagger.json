@@ -57,19 +57,20 @@
             }
           }
         },
-        "/user/": {
-          "post": {
-            
+        "/user": {
+          "post": {            
             "summary": "Create user",
             "parameters": [
               {
                 "name": "email",
-                "in": "query",
+                "in": "body",
                 "required": true,
                 "description": "Email of user that we want to create",
                 "type": "string",
                 "schema":{
-                  "example": "testCreate@gmail.com"
+                  "example": {
+                    "email": "test@gmail.com"
+                  }
                 }
               }
             ],
@@ -98,12 +99,14 @@
             "parameters": [
               {
                 "name": "email",
-                "in": "query",
+                "in": "body",
                 "required": true,
                 "description": "Email of user that we want to delete",
                 "type": "string",
                 "schema":{
-                  "example": "test@gmail.com"
+                  "example": {
+                    "email": "test@gmail.com"
+                  }
                 }
               }
             ],
@@ -131,8 +134,8 @@
             "summary": "Update user",
             "parameters": [
               {
-                "name": "email",
-                "in": "query",
+                "name": "newEmail",
+                "in": "body",
                 "required": true,
                 "description": "Email of user that we want to update",
                 "type": "string",
@@ -140,7 +143,7 @@
                   "example": {
                     "newEmail": "testNew@gmail.com",
                     "newFirstName": "newFirstName",
-                    "newLastname": "newLastname",
+                    "newLastName": "newLastname",
                     "newPhone": "645645",
                     "oldEmail": "test@gmail.com"
                   }

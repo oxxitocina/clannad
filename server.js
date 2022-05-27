@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
+const ejs=require('ejs')
 var methodOverride = require('method-override')
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.set('views', './app/views')
+app.set('view engine', 'ejs')
 
 const swaggerUi = require('swagger-ui-express'),
 swaggerDocument = require('./swagger.json');
@@ -49,8 +52,8 @@ app.use(express.static('app'))
 app.use(express.static(__dirname+'app/public/css'))
 app.use(express.static(__dirname+'app/public/img'))
 
-app.set('views', './app/views')
-app.set('view engine', 'ejs')
+//app.set('views', './app/views')
+//app.set('view engine', 'ejs')
 
   app.get("/", function(req, res) {  
     res.render('index');
